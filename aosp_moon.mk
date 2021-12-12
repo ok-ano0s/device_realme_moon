@@ -18,6 +18,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit some common Aosp stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+Elixir_MAINTAINER := AnoosRagh
+IS_PHONE := true
+CUSTOM_BUILD_TYPE := OFFICIAL
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_INCLUDE_STOCK_ACORE := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := false
+
 # Inherit from device makefile
 $(call inherit-product, device/realme/moon/device.mk)
 
@@ -25,7 +34,7 @@ $(call inherit-product, device/realme/moon/device.mk)
 PRODUCT_NAME := aosp_moon
 PRODUCT_DEVICE := moon
 PRODUCT_BRAND := realme
-PRODUCT_MODEL := Realme G95 Series
+PRODUCT_MODEL := Realme G85 Series
 PRODUCT_MANUFACTURER := realme
 
 TARGET_BOOT_ANIMATION_RES := 720
